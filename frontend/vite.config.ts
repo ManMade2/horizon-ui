@@ -18,8 +18,9 @@ export default defineConfig({
             clearScreen: false,     // Prevent clearing the terminal on each rebuild
         },
     },
+
     plugins: [
-        nodePolyfills(), // Automatically polyfills core Node.js modules in browser
+        nodePolyfills(), // Automatically polyfills core Node.js modfules in browser
     ],
     resolve: {
         alias: {

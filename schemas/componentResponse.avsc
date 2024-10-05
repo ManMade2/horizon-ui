@@ -1,0 +1,10 @@
+{
+    "type": "record",
+    "name": "ComponentResponse",
+    "fields": [
+        {
+            "name": "html",
+            "type": "string"
+        }
+    ]
+}

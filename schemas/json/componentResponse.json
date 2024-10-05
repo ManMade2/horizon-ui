@@ -1,0 +1,12 @@
+{
+  "title": "ComponentResponse",
+  "type": "object",
+  "properties": {
+    "html": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "html"
+  ]
+}
