@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["backend/horizon_ui"]
+
+[tool.hatch.build]
+include = [
+  "backend/horizon_ui/**/*", # This ensures your packages, templates, and static files are included
+]
+
+[project]
+name = "manmade.horizon-ui"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+keywords = []
+authors = [{ name = "ManMade2", email = "madskris@proton.me" }]
+classifiers = [
+
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = ["flask", "avro", "flask-cors"]
+
+[project.urls]
+Documentation = "https://github.com/ManMade2/horizon-ui#readme"
+Issues = "https://github.com/ManMade2/horizon-ui/issues"
+Source = "https://github.com/ManMade2/horizon-ui"
+
+[tool.hatch.version]
+path = "backend/horizon_ui/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = ["mypy>=1.0.0"]
+dev = []
+
+
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:backend/horizon_ui tests}"
+
+[tool.coverage.run]
+source_pkgs = ["horizon_ui", "tests"]
+branch = true
+parallel = true
+omit = ["backend/horizon_ui/__about__.py"]
+
+[tool.coverage.paths]
+horizon_ui = ["backend/horizon_ui", "*/horizon-ui/backend/horizon_ui"]
+tests = ["tests", "*/horizon-ui/tests"]
+
+[tool.coverage.report]
+exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
