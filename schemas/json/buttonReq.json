@@ -1,0 +1,24 @@
+{
+  "title": "GetButton",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "css_class": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "url",
+    "id",
+    "label",
+    "css_class"
+  ]
+}

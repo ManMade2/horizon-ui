@@ -27,6 +27,7 @@ classifiers = [
 ]
 dependencies = ["flask", "avro", "flask-cors"]
 
+
 [project.urls]
 Documentation = "https://github.com/ManMade2/horizon-ui#readme"
 Issues = "https://github.com/ManMade2/horizon-ui/issues"
@@ -37,11 +38,18 @@ path = "backend/horizon_ui/__about__.py"
 
 [tool.hatch.envs.types]
 extra-dependencies = ["mypy>=1.0.0"]
-dev = []
 
+[tool.hatch.envs.default]
+dependencies = ["datamodel-code-generator", "fastavro"]
 
 [tool.hatch.envs.types.scripts]
 check = "mypy --install-types --non-interactive {args:backend/horizon_ui tests}"
+
+[tool.hatch.envs.default.scripts]
+# Use Python's -m flag to ensure datamodel-codegen runs correctly
+generate-python-classes = "python -m datamodel_code_generator --input schemas/buttonReq.json --output backend/horizon_ui/models/buttonReq.py --input-file-type jsonschema"
+generate-classes = "python scripts/generate_classes.py"
+
 
 [tool.coverage.run]
 source_pkgs = ["horizon_ui", "tests"]
