@@ -15,6 +15,25 @@ _componentResponse = '''
 
 componentResponse = avro.schema.parse(_componentResponse)
 
+_getAlert = '''
+{
+    "type": "record",
+    "name": "GetAlert",
+    "fields": [
+        {
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "name": "text",
+            "type": "string"
+        }
+    ]
+}
+'''
+
+getAlert = avro.schema.parse(_getAlert)
+
 _getButton = '''
 {
     "type": "record",
@@ -41,6 +60,25 @@ _getButton = '''
 '''
 
 getButton = avro.schema.parse(_getButton)
+
+_getInput = '''
+{
+    "type": "record",
+    "name": "GetInput",
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "placeholder",
+            "type": "string"
+        }
+    ]
+}
+'''
+
+getInput = avro.schema.parse(_getInput)
 
 _getNav = '''
 {
@@ -88,6 +126,8 @@ getNav = avro.schema.parse(_getNav)
 
 all = [
 	_componentResponse,
+	_getAlert,
 	_getButton,
+	_getInput,
 	_getNav,
 ]

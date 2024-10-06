@@ -1,0 +1,14 @@
+{
+    "type": "record",
+    "name": "GetAlert",
+    "fields": [
+        {
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "name": "text",
+            "type": "string"
+        }
+    ]
+}

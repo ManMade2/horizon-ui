@@ -1,0 +1,13 @@
+<div id="{{data.id}}" class="uk-grid uk-grid-small uk-margin uk-child-width-auto">
+    {% for radio in data.radios %}
+
+    <label>
+        {% if item.selected == True %}
+        <input class="uk-radio" type="radio" name="radio2" checked /> {{radio.text}}
+        {% else %}
+        <input class="uk-radio" type="radio" name="radio2" /> {{radio.text}}
+        {% endif %}
+    </label>
+
+    {% endfor %}
+</div>

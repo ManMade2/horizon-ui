@@ -1,0 +1,30 @@
+{
+    "type": "record",
+    "name": "GetRadio",
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "radios",
+            "type": {
+                "type": "array",
+                "items": {
+                    "name": "radio",
+                    "type": "record",
+                    "fields": [
+                        {
+                            "name": "selected",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "text",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

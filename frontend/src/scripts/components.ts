@@ -6,6 +6,10 @@ import { GetButton } from '../models/getButton.avsc';
 import { Button } from '../components/button';
 import { GetNav } from '../models/getNav.avsc';
 import { Nav } from '../components/nav';
+import { GetAlert } from '../models/getAlert.avsc';
+import { Alert } from '../components/alert';
+import { GetInput } from '../models/getInput.avsc';
+import { Input } from '../components/input';
 
 export class Components
 {
@@ -40,6 +44,22 @@ export class Components
         const element = this.CreateElement<HTMLDivElement>(html);
 
         return new Nav(element);
+    }
+
+    public static async CreateAlert(config: GetAlert): Promise<Nav>
+    {
+        const html = await this.CreateRequest("GetAlert", config);
+        const element = this.CreateElement<HTMLDivElement>(html);
+
+        return new Alert(element);
+    }
+
+    public static async CreateInput(config: GetInput): Promise<Input>
+    {
+        const html = await this.CreateRequest("GetInput", config);
+        const element = this.CreateElement<HTMLInputElement>(html);
+
+        return new Input(element);
     }
 
     private static CreateElement<T extends HTMLElement>(html: string): T 

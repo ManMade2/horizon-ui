@@ -17,6 +17,18 @@ async function main()
         title: "Test",
         listItems: [
             {
+                active: true,
+                url: "#",
+                label: "Hello",
+                icon: "circle-play"
+            },
+            {
+                active: false,
+                url: "#",
+                label: "Hello",
+                icon: "circle-play"
+            },
+            {
                 active: false,
                 url: "#",
                 label: "Hello",
@@ -25,10 +37,50 @@ async function main()
         ]
     });
 
+    const nav2 = await Components.CreateNav({
+        title: "Test2",
+        listItems: [
+            {
+                active: true,
+                url: "#",
+                label: "Hello",
+                icon: "circle-play"
+            },
+            {
+                active: false,
+                url: "#",
+                label: "Hello",
+                icon: "circle-play"
+            },
+            {
+                active: false,
+                url: "#",
+                label: "Hello",
+                icon: "circle-play"
+            }
+        ]
+    });
+
+    const alert = await Components.CreateAlert({
+        title: "Oh No",
+        text: "Some text"
+    });
+
+    const input = await Components.CreateInput({
+        id: "O-No",
+        placeholder: "Some text"
+    });
+
+
+
     const container = document.getElementById("sidebar");
     console.info(container);
     container?.appendChild(button.htmlElement);
     container?.appendChild(nav.htmlElement);
+    container?.appendChild(nav2.htmlElement);
+    container?.appendChild(alert.htmlElement);
+    container?.appendChild(input.htmlElement);
+
 }
 
 main();

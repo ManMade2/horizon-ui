@@ -1,0 +1,14 @@
+{
+    "type": "record",
+    "name": "GetInput",
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "placeholder",
+            "type": "string"
+        }
+    ]
+}
