@@ -78,7 +78,29 @@ if __name__ == "__main__":
     root = os.path.dirname(__file__)
     folder = os.path.join(root, "../schemas/")
 
-    for filePath in os.listdir(folder):
+    allJson = "import avro.schema\n\n"
+    names = []
 
-        if ".avsc" in filePath:
-            generate_jsonschema_from_avro(f"schemas/{filePath}")
+    for fileName in os.listdir(folder):
+
+        if ".avsc" not in fileName:
+            continue
+
+        # generate_jsonschema_from_avro(f"schemas/{fileName}")
+
+        with open(f"schemas/{fileName}", "r") as f:
+            name = fileName.removesuffix(".avsc")
+            names.append(name)
+            allJson += f"_{name} = '''\n{f.read()}\n'''\n\n"
+            allJson += f"{name} = avro.schema.parse(_{name})\n\n"
+
+    x = os.path.join(root, "../backend/horizon_ui/schemas.py")
+    allJson += f"\nall = [\n"
+
+    for name in names:
+        allJson += f"\t_{name},\n"
+
+    allJson += "]"
+
+    with open(x, "w") as f:
+        f.write(allJson)

@@ -3,6 +3,7 @@ from flask_cors import CORS
 
 from horizon_ui import endpoint
 
+
 app = Flask(__name__)
 CORS(app, origins="http://127.0.0.1:5500")
 
