@@ -1,15 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark uk-theme-yellow">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../backend/horizon_ui/static/dis/main.css">
   <title>Vite + TS</title>
+  <link rel="stylesheet" href="https://unpkg.com/franken-ui@1.1.0/dist/css/core.min.css" />
+  <script src="https://unpkg.com/franken-ui@1.1.0/dist/js/core.iife.js" type="module"></script>
+  <script src="https://unpkg.com/franken-ui@1.1.0/dist/js/icon.iife.js" type="module"></script>
 </head>
 
-<body>
-  <div id="app"></div>
-  <div id="container"></div>
+<body class="bg-background text-foreground">
+  <div id="container">
+    <div id="sidebar"></div>
+  </div>
   <script type="module" src="../backend/horizon_ui/static/dis/main.js"></script>
 </body>
 

@@ -4,6 +4,8 @@ import { HorizonConfig } from '../data/horizonConfig';
 import { postData, postJson, getJson } from '../utils/reqs';
 import { GetButton } from '../models/getButton.avsc';
 import { Button } from '../components/button';
+import { GetNav } from '../models/getNav.avsc';
+import { Nav } from '../components/nav';
 
 export class Components
 {
@@ -30,6 +32,14 @@ export class Components
         const element = this.CreateElement<HTMLAnchorElement>(html);
 
         return new Button(element);
+    }
+
+    public static async CreateNav(config: GetNav): Promise<Nav>
+    {
+        const html = await this.CreateRequest("GetNav", config);
+        const element = this.CreateElement<HTMLDivElement>(html);
+
+        return new Nav(element);
     }
 
     private static CreateElement<T extends HTMLElement>(html: string): T 

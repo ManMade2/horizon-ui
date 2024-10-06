@@ -1,0 +1,20 @@
+<nav class="horizon-nav {{data.css_class}}">
+  <h2 class="">{{data.title}}</h2>
+  <ul class="uk-nav uk-nav-secondary">
+
+    {% for item in data.listItems %}
+    {% if item.active == True %}
+    <li class="uk-active">
+      {% else %}
+    <li class=>
+      {% endif %}
+      <a href="{{item.url}}" uk-toggle>
+        <span>
+          <uk-icon icon="{{item.icon}}"></uk-icon>
+        </span>
+        {{item.label}}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

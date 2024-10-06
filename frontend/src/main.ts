@@ -12,8 +12,23 @@ async function main()
         url: ''
     });
 
-    const container = document.getElementById("container");
+
+    const nav = await Components.CreateNav({
+        title: "Test",
+        listItems: [
+            {
+                active: false,
+                url: "#",
+                label: "Hello",
+                icon: "circle-play"
+            }
+        ]
+    });
+
+    const container = document.getElementById("sidebar");
+    console.info(container);
     container?.appendChild(button.htmlElement);
+    container?.appendChild(nav.htmlElement);
 }
 
 main();

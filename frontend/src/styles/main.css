@@ -1,1 +1,37 @@
-/*# sourceMappingURL=main.css.map */
+.horizon-nav {
+  margin-top: 16px;
+  padding: 8px 12px 8px 12px;
+}
+.horizon-nav h2 {
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+}
+.horizon-nav span {
+  margin-right: 8px;
+}
+
+.horizon-nav:nth-child(1) {
+  margin-top: 0px;
+}
+
+body {
+  font-family: "Geist Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+div#sidebar {
+  width: 250px;
+  border-right: 1px solid rgb(41, 37, 36);
+  display: block;
+  height: 100vh;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.max-h-60 {
+  max-height: 60px;
+  overflow-y: auto;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,16 @@
+@use "../variables";
+@use "input-base.scss";
+
+a.horizonButton {
+    @extend .input-base;
+    display: block;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: variables.$text-color;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+}

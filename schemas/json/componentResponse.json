@@ -1,12 +1,23 @@
 {
-  "title": "ComponentResponse",
-  "type": "object",
-  "properties": {
-    "html": {
-      "type": "string"
-    }
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Schema",
+    "version": "1.0.0"
   },
-  "required": [
-    "html"
-  ]
+  "paths": {},
+  "components": {
+    "schemas": {
+      "ComponentResponse": {
+        "type": "object",
+        "properties": {
+          "html": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "html"
+        ]
+      }
+    }
+  }
 }

@@ -1,24 +1,35 @@
 {
-  "title": "GetButton",
-  "type": "object",
-  "properties": {
-    "url": {
-      "type": "string"
-    },
-    "id": {
-      "type": "string"
-    },
-    "label": {
-      "type": "string"
-    },
-    "css_class": {
-      "type": "string"
-    }
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Schema",
+    "version": "1.0.0"
   },
-  "required": [
-    "url",
-    "id",
-    "label",
-    "css_class"
-  ]
+  "paths": {},
+  "components": {
+    "schemas": {
+      "GetButton": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "css_class": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "id",
+          "label",
+          "css_class"
+        ]
+      }
+    }
+  }
 }

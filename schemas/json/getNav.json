@@ -1,0 +1,50 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Schema",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "GetNav": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "listItems": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "active": {
+                  "type": "boolean"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "active",
+                "url",
+                "label",
+                "icon"
+              ]
+            }
+          }
+        },
+        "required": [
+          "title",
+          "listItems"
+        ]
+      }
+    }
+  }
+}

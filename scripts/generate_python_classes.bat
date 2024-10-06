@@ -13,6 +13,8 @@ rem Delete all files in the directory
 del /Q "%directory%\*.*"
 
 python scripts/generate_classes.py
-python -m datamodel_code_generator --input schemas/json --output backend/horizon_ui/models --input-file-type jsonschema
+rem python -m datamodel_code_generator --input schemas/json --output backend/horizon_ui/models --input-file-type jsonschema
+rem python -m datamodel_code_generator --input schemas/json --output backend/horizon_ui/models --input-file-type 
+python -m datamodel_code_generator --input schemas/json --output backend/horizon_ui/models --input-file-type openapi
 
 echo Python classes generated successfully.

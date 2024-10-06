@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, jsonify
 
-from horizon_ui.schemas import all, getButton
+from horizon_ui.schemas import all, getButton, getNav
 from horizon_ui.requests import deserialize, serializeComponent
 
 
@@ -24,5 +24,18 @@ def create_button():
 
     req = deserialize(data, getButton)
     component = render_template("button.html", data=req)
+
+    return serializeComponent(component)
+
+
+@endpoints.route("/getNav", methods=["POST"])
+def create_nav():
+
+    data = request.get_data()
+    if not data:
+        return jsonify({"error": "No data received"}), 400
+
+    req = deserialize(data, getNav)
+    component = render_template("nav.html", data=req)
 
     return serializeComponent(component)
