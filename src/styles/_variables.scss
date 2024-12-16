@@ -1,0 +1,11 @@
+@use "sass:color";
+
+$text-color: #C1C2C5;
+$side-bar-bg-color: #1a1b1e;
+$side-bar-border-color: #3b3e45;
+
+$ui-elements-color: #2C2E33;
+$drawer-bg-color: color.scale($side-bar-bg-color, $lightness: 3%);
+
+$blue: #4DABF7;
+$blue-highlight: color.adjust($blue, $lightness: 20%);
