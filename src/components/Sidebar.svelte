@@ -1,6 +1,6 @@
 <script lang="ts">
   export let isOpen: boolean = true;
-  export let width: string = "250px";
+  export let width: string = "300px";
 </script>
 
 <aside

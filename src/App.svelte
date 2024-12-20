@@ -1,12 +1,9 @@
 <script lang="ts">
-	import Button from "./components/Button.svelte";
 	import DrawerNav from "./components/DrawerNav.svelte";
 	import Sidebar from "./components/Sidebar.svelte";
-	import { ButtonSize, ButtonVariant } from "./lib/types/button";
-	import Notification from "./components/Notification.svelte";
-	import { NotificationPosition, NotificationStatus } from "./lib/types/notification";
-	import Upload from "./components/Upload.svelte";
 	import Canvas from "./components/Canvas.svelte";
+	import dracoLoader from "./lib/loaders/dracoLoader";
+	let sceneObjects: any[] = [];
 
 	const navItems = [
 		{
@@ -70,23 +67,15 @@
 <div class="app-shell">
 	<Sidebar isOpen={true}>
 		<DrawerNav items={navItems} />
+		{#each sceneObjects as object}
+			<div>
+				<h1>{object.type}</h1>
+			</div>
+		{/each}
 	</Sidebar>
 
 	<main class="main-content">
-		<!--<Button variant={ButtonVariant.Link} size={ButtonSize.Small}>Link</Button>
-		<Button variant={ButtonVariant.Default}>Default</Button>
-		<Button variant={ButtonVariant.Primary}>Primary</Button>
-		<Button variant={ButtonVariant.Secondary}>Secondary</Button>
-		<Button variant={ButtonVariant.Danger}>Danger</Button>
-		<Button variant={ButtonVariant.Text}>Text</Button>
-		<Notification
-			message="Top Center"
-			pos={NotificationPosition.TopCenter}
-			status={NotificationStatus.Danger}
-			timeout={1000}
-		/>
-		<Upload options={uploadOptions} />-->
-		<Canvas />
+		<Canvas bind:sceneObjects />
 	</main>
 </div>
 

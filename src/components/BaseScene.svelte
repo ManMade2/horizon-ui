@@ -1,8 +1,11 @@
 <script lang="ts">
-	import { T } from "@threlte/core";
+	import { T, useThrelte } from "@threlte/core";
 	import { OrbitControls, interactivity } from "@threlte/extras";
 	import SceneSettings from "./SceneSettings.svelte";
+	import { onMount } from "svelte";
 	import type { OrbitControlsSettings } from "../lib/types/orbitControlSettings";
+
+	const { scene } = useThrelte();
 
 	let settings: OrbitControlsSettings = {
 		enableDamping: true,
@@ -23,11 +26,13 @@
 		MIDDLE: 2, // Middle click to zoom (default)
 		RIGHT: 0, // Right click to rotate
 	};
-
-	interactivity();
 </script>
 
 <T.PerspectiveCamera makeDefault {position} lookAt.y={0.5}>
+	<T.Mesh>
+		<T.BoxGeometry />
+		<T.MeshBasicMaterial color="red" />
+	</T.Mesh>
 	<OrbitControls
 		{mouseButtons}
 		enableDamping={settings.enableDamping}
@@ -46,4 +51,3 @@
 
 <T.AmbientLight intensity={0.8} />
 <T.DirectionalLight position.y={10} position.z={10} />
-<SceneSettings bind:settings />

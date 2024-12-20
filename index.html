@@ -1,16 +1,31 @@
 <!doctype html>
 <html lang="en" class="dark uk-theme-yellow">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Horizon UI</title>
-    <script src="franken-ui.js"></script>
-    <script src="franken-ui-icon.js"></script>
-    <link rel="stylesheet" href="franken-ui.css" />
-  </head>
-  <body class="bg-background text-foreground">
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horizon UI</title>
+  <script src="franken-ui.js"></script>
+  <script src="franken-ui-icon.js"></script>
+  <link rel="stylesheet" href="franken-ui.css" />
+</head>
+
+<body class="bg-background text-foreground">
+  <div id="app"></div>
+  <script lang="ts" type="module">
+
+    import { mount } from 'svelte'
+    import App from './src/App.svelte'
+
+    const app = mount(App, {
+      target: document.getElementById('app'),
+    })
+
+    export default app
+
+
+  </script>
+</body>
+
 </html>

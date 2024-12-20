@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .vscode
+
+**/*.lock
+package-lock.json

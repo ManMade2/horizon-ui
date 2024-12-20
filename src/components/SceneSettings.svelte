@@ -5,12 +5,22 @@
 	export let settings: OrbitControlsSettings;
 </script>
 
-<Pane theme={ThemeUtils.presets.standard} position="fixed" title="OrbitControls">
+<Pane
+	theme={ThemeUtils.presets.translucent}
+	position="inline"
+	title="OrbitControls"
+>
 	<Checkbox bind:value={settings.autoRotate} label="autoRotate" />
 	<Checkbox bind:value={settings.enableDamping} label="enableDamping" />
 	<Checkbox bind:value={settings.enableZoom} label="enableZoom" />
 	<Checkbox bind:value={settings.zoomToCursor} label="zoomToCursor" />
-	<Slider label="rotateSpeed" bind:value={settings.rotateSpeed} min={0.5} max={1} step={0.1} />
+	<Slider
+		label="rotateSpeed"
+		bind:value={settings.rotateSpeed}
+		min={0.5}
+		max={1}
+		step={0.1}
+	/>
 	<Slider
 		label="dampingFactor"
 		bind:value={settings.dampingFactor}
@@ -18,7 +28,13 @@
 		max={0.5}
 		step={0.05}
 	/>
-	<Slider label="zoomSpeed" bind:value={settings.zoomSpeed} min={0.1} max={2} step={0.1} />
+	<Slider
+		label="zoomSpeed"
+		bind:value={settings.zoomSpeed}
+		min={0.1}
+		max={2}
+		step={0.1}
+	/>
 	<Slider
 		label="minPolarAngle"
 		bind:value={settings.minPolarAngle}
